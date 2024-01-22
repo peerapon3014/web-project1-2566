@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<title>A-Frame - Video Texture</title>
 		<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -16,12 +15,10 @@
 				init: function()
 				{
 					let video = document.querySelector("#video");
-
 					let videoDisplay = document.querySelector("#video-display");
 					let videoBorder  = document.querySelector("#video-border");
 					let videoMesh  = videoDisplay.getObject3D("mesh");
 					let borderMesh = videoBorder.getObject3D("mesh");
-					
 					videoBorder.addEventListener("mousedown", function(event)
 					{
 						if ( video.paused )
@@ -59,8 +56,8 @@
 		<a-scene>
 
 			<a-assets timeout="10000">
-				<img id="grid" src="3D Model/ground1.jpg" crossorigin="anonymous" />
-				<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
+				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
 				<video id="video" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" autoplay></video>
 				<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
 				<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
@@ -68,6 +65,8 @@
 				<a-asset-item id="speakerlow" src="3D Model/speaker_low_full.glb"></a-asset-item>
 				<a-asset-item id="speakerhigh" src="3D Model/speaker_high.glb"></a-asset-item>
 				<a-asset-item id="flag" src="3D Model/thailand.glb"></a-asset-item>
+				<a-asset-item id="screen" src="3D Model/screen16m.glb"></a-asset-item>
+				<a-asset-item id="milo" src="3D Model/milo.glb"></a-asset-item>
 			</a-assets>
 
 			<a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
@@ -223,6 +222,8 @@
 			<a-entity gltf-model="#speakerlow" position="-8 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
 			<a-entity gltf-model="#speakerlow" position="22 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
 			<a-entity gltf-model="#speakerhigh" position="5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
+			<!-- <a-entity gltf-model="#screen" position="10 10 10" rotation="0 180 0" scale="1 1 1"> -->
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
@@ -287,7 +288,7 @@
 			<a-entity gltf-model="#cat" animation-mixer="loop: repeat" position="-6 0 -3" rotation="0 90 0" scale="0.4 0.4 0.4" 
 					  animation="property: position; to: 6 0 -3; dur: 10000; easing: linear; loop: true">
 			</a-entity>
-			
+
 		</a-scene>
 	</body>
 </html>
