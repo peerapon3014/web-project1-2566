@@ -99,84 +99,36 @@
 
 
 			<!-- monitor -->
-			<a-box color="black" depth="1" height="10.5" width="17" position="0 9 -20">
+			<a-entity gltf-model="#screen" position="-9.5 0 -19" rotation="0 1.5 0" scale="1.2 1.2 1.2">
 				<a-video
 					id="video-display"
 					width="16" height="9"
-					position="0 -0.39981 0.55"
-					src="#video">
+					position="8.2 7 0"
+					src="#video"
+					rotation="0 -2 0">
 				</a-video>
-				<!-- name tag -->
 				<a-text 
 					value="Sound"
 					align="center"
 					color="white"
 					text="width: 21"
-					position="3 4.7 0.55">
+					position="11 11 0.3"
+					rotation="0 -2 0">
 				</a-text>
 				<a-text 
 					value="Ban SaiThong"
 					align="center"
 					color="#ff00ff"
 					text="width: 21"
-					position="-1.5 4.7 0.55">
+					position="6 11 0"
+					rotation="0 -3 0">
 				</a-text>
-				<!-- stand monitor -->	
-				<a-cylinder 
-					position="8 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<a-cylinder 
-					position="-8 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<a-cylinder 
-					position="0 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<!-- Thai flag -->
-				<a-cylinder 
-					position="8 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="-8 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="-2.5 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="2.5 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-			</a-box>
+			</a-entity>
 
 			<!-- speaker -->
-			<a-entity gltf-model="#speakerlow" position="-8 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerlow" position="22 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerhigh" position="5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
-			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
-			<!-- <a-entity gltf-model="#screen" position="10 10 10" rotation="0 180 0" scale="1 1 1"> -->
+			<a-entity gltf-model="#speakerlow" position="-8.5 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+			<a-entity gltf-model="#speakerlow" position="23 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+			<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
@@ -202,7 +154,7 @@
 					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
 				</a-cylinder>
 			</a-entity>
-			<a-entity gltf-model="#speakerhigh" position="-25 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+			<a-entity gltf-model="#speakerhigh" position="-25.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
