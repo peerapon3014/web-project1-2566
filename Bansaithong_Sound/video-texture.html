@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>A-Frame - Video Texture</title>
+		<title>VR - Sai thong</title>
 		<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 		<script src="js/aframe-environment-component.min.js"></script>
 		<script src="js/animation-mixer.js"></script>
@@ -10,47 +10,47 @@
 	<body>
 		<script>
 
-			AFRAME.registerComponent('video-controls', {
+			// AFRAME.registerComponent('video-controls', {
 				
-				init: function()
-				{
-					let video = document.querySelector("#video");
-					let videoDisplay = document.querySelector("#video-display");
-					let videoBorder  = document.querySelector("#video-border");
-					let videoMesh  = videoDisplay.getObject3D("mesh");
-					let borderMesh = videoBorder.getObject3D("mesh");
-					videoBorder.addEventListener("mousedown", function(event)
-					{
-						if ( video.paused )
-						{
-							video.play();
-							borderMesh.material.color.set("#004400");
-						}
-						else
-						{
-							video.pause();
-							borderMesh.material.color.set("#440000");
-						}
-					});
-				}
+			// 	init: function()
+			// 	{
+			// 		let video = document.querySelector("#video");
+			// 		let videoDisplay = document.querySelector("#video-display");
+			// 		let videoBorder  = document.querySelector("#video-border");
+			// 		let videoMesh  = videoDisplay.getObject3D("mesh");
+			// 		let borderMesh = videoBorder.getObject3D("mesh");
+			// 		videoBorder.addEventListener("mousedown", function(event)
+			// 		{
+			// 			if ( video.paused )
+			// 			{
+			// 				video.play();
+			// 				borderMesh.material.color.set("#004400");
+			// 			}
+			// 			else
+			// 			{
+			// 				video.pause();
+			// 				borderMesh.material.color.set("#440000");
+			// 			}
+			// 		});
+			// 	}
 				
-			});
+			// });
 
-			AFRAME.registerComponent('modify-materials', {
-				init: function () {
-				// Wait for model to load.
-				this.el.addEventListener('model-loaded', () => {
-					// Grab the mesh / scene.
-					const obj = this.el.getObject3D('mesh');
-					// Go over the submeshes and modify materials we want.
-					obj.traverse(node => {
-					if (node.name.indexOf('ship') !== -1) {
-						node.material.color.set('red');
-					}
-					});
-				});
-				}
-			});
+			// AFRAME.registerComponent('modify-materials', {
+			// 	init: function () {
+			// 	// Wait for model to load.
+			// 	this.el.addEventListener('model-loaded', () => {
+			// 		// Grab the mesh / scene.
+			// 		const obj = this.el.getObject3D('mesh');
+			// 		// Go over the submeshes and modify materials we want.
+			// 		obj.traverse(node => {
+			// 		if (node.name.indexOf('ship') !== -1) {
+			// 			node.material.color.set('red');
+			// 		}
+			// 		});
+			// 	});
+			// 	}
+			// });
 		</script>
 
 		<a-scene>
