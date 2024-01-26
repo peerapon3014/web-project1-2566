@@ -53,81 +53,6 @@
 			// });
 		</script>
 
-		// 	init: function()
-		// 	{
-		// 		let video = document.querySelector("#video");
-		// 		let videoDisplay = document.querySelector("#video-display");
-		// 		let videoBorder  = document.querySelector("#video-border");
-		// 		let videoMesh  = videoDisplay.getObject3D("mesh");
-		// 		let borderMesh = videoBorder.getObject3D("mesh");
-		// 		videoBorder.addEventListener("mousedown", function(event)
-		// 		{
-		// 			if ( video.paused )
-		// 			{
-		// 				video.play();
-		// 				borderMesh.material.color.set("#004400");
-		// 			}
-		// 			else
-		// 			{
-		// 				video.pause();
-		// 				borderMesh.material.color.set("#440000");
-		// 			}
-		// 		});
-		// 	}
-
-		// });
-
-		// AFRAME.registerComponent('modify-materials', {
-		// 	init: function () {
-		// 	// Wait for model to load.
-		// 	this.el.addEventListener('model-loaded', () => {
-		// 		// Grab the mesh / scene.
-		// 		const obj = this.el.getObject3D('mesh');
-		// 		// Go over the submeshes and modify materials we want.
-		// 		obj.traverse(node => {
-		// 		if (node.name.indexOf('ship') !== -1) {
-		// 			node.material.color.set('red');
-		// 		}
-		// 		});
-		// 	});
-		// 	}
-		// });
-
-		// อาร์เรย์ของ URL วิดีโอ
-		const videoUrls = [
-			"video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4",
-			"video/annVideo.mp4",
-			"video/sintel.mp4"
-		];
-
-		document.addEventListener('keydown', function (event) {
-			// ตรวจสอบว่าปุ่มที่ถูกกดคือ N หรือไม่
-			if (event.key === 'N' || event.key === 'n') {
-				// สุ่มเลือก URL วิดีโอ
-				const randomVideoUrl = getRandomVideoUrl();
-				// เปลี่ยนที่อยู่ของวิดีโอ
-				changeVideoSource(randomVideoUrl);
-			}
-		});
-
-		function getRandomVideoUrl() {
-			// สุ่มตำแหน่งของ URL วิดีโอจากอาร์เรย์
-			const randomIndex = Math.floor(Math.random() * videoUrls.length);
-			return videoUrls[randomIndex];
-		}
-
-		function changeVideoSource(videoUrl) {
-			// เปลี่ยนที่อยู่ของวิดีโอสำหรับทุกตัว
-			document.getElementById('video').src = videoUrl;
-			document.getElementById('video2').src = videoUrl;
-			document.getElementById('video3').src = videoUrl;
-			// เริ่มเล่นวิดีโอใหม่
-			document.getElementById('video').play();
-			document.getElementById('video2').play();
-			document.getElementById('video3').play();
-		}
-	</script>
-
 	<a-scene>
 
 			<a-assets timeout="10000">
@@ -147,6 +72,7 @@
 				<a-asset-item id="j-dee" src="3D Model/Wat Chiang Man 4K.glb"></a-asset-item>
 				<a-asset-item id="Old-Spirit-House" src="3D Model/old_spirit_house.glb"></a-asset-item>
 				<a-asset-item id="tree" src="3D Model/mango_tree.glb"></a-asset-item>
+				<!-- <a-asset-item id="wat" src="3D Model/wat_benchamabophit 8K.glb"></a-asset-item> -->
 			</a-assets>
 
 			<a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
