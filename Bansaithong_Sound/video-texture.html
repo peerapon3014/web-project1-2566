@@ -9,123 +9,6 @@
 
 	<body>
 		<script>
-
-			// AFRAME.registerComponent('video-controls', {
-				
-			// 	init: function()
-			// 	{
-			// 		let video = document.querySelector("#video");
-			// 		let videoDisplay = document.querySelector("#video-display");
-			// 		let videoBorder  = document.querySelector("#video-border");
-			// 		let videoMesh  = videoDisplay.getObject3D("mesh");
-			// 		let borderMesh = videoBorder.getObject3D("mesh");
-			// 		videoBorder.addEventListener("mousedown", function(event)
-			// 		{
-			// 			if ( video.paused )
-			// 			{
-			// 				video.play();
-			// 				borderMesh.material.color.set("#004400");
-			// 			}
-			// 			else
-			// 			{
-			// 				video.pause();
-			// 				borderMesh.material.color.set("#440000");
-			// 			}
-			// 		});
-			// 	}
-				
-			// });
-
-			// AFRAME.registerComponent('modify-materials', {
-			// 	init: function () {
-			// 	// Wait for model to load.
-			// 	this.el.addEventListener('model-loaded', () => {
-			// 		// Grab the mesh / scene.
-			// 		const obj = this.el.getObject3D('mesh');
-			// 		// Go over the submeshes and modify materials we want.
-			// 		obj.traverse(node => {
-			// 		if (node.name.indexOf('ship') !== -1) {
-			// 			node.material.color.set('red');
-			// 		}
-			// 		});
-			// 	});
-			// 	}
-			// });
-		</script>
-
-		// 	init: function()
-		// 	{
-		// 		let video = document.querySelector("#video");
-		// 		let videoDisplay = document.querySelector("#video-display");
-		// 		let videoBorder  = document.querySelector("#video-border");
-		// 		let videoMesh  = videoDisplay.getObject3D("mesh");
-		// 		let borderMesh = videoBorder.getObject3D("mesh");
-		// 		videoBorder.addEventListener("mousedown", function(event)
-		// 		{
-		// 			if ( video.paused )
-		// 			{
-		// 				video.play();
-		// 				borderMesh.material.color.set("#004400");
-		// 			}
-		// 			else
-		// 			{
-		// 				video.pause();
-		// 				borderMesh.material.color.set("#440000");
-		// 			}
-		// 		});
-		// 	}
-
-		// });
-
-		// AFRAME.registerComponent('modify-materials', {
-		// 	init: function () {
-		// 	// Wait for model to load.
-		// 	this.el.addEventListener('model-loaded', () => {
-		// 		// Grab the mesh / scene.
-		// 		const obj = this.el.getObject3D('mesh');
-		// 		// Go over the submeshes and modify materials we want.
-		// 		obj.traverse(node => {
-		// 		if (node.name.indexOf('ship') !== -1) {
-		// 			node.material.color.set('red');
-		// 		}
-		// 		});
-		// 	});
-		// 	}
-		// });
-
-		// อาร์เรย์ของ URL วิดีโอ
-		const videoUrls = [
-			"video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4",
-			"video/annVideo.mp4",
-			"video/sintel.mp4"
-		];
-
-		document.addEventListener('keydown', function (event) {
-			// ตรวจสอบว่าปุ่มที่ถูกกดคือ N หรือไม่
-			if (event.key === 'N' || event.key === 'n') {
-				// สุ่มเลือก URL วิดีโอ
-				const randomVideoUrl = getRandomVideoUrl();
-				// เปลี่ยนที่อยู่ของวิดีโอ
-				changeVideoSource(randomVideoUrl);
-			}
-		});
-
-		function getRandomVideoUrl() {
-			// สุ่มตำแหน่งของ URL วิดีโอจากอาร์เรย์
-			const randomIndex = Math.floor(Math.random() * videoUrls.length);
-			return videoUrls[randomIndex];
-		}
-
-		function changeVideoSource(videoUrl) {
-			// เปลี่ยนที่อยู่ของวิดีโอสำหรับทุกตัว
-			document.getElementById('video').src = videoUrl;
-			document.getElementById('video2').src = videoUrl;
-			document.getElementById('video3').src = videoUrl;
-			// เริ่มเล่นวิดีโอใหม่
-			document.getElementById('video').play();
-			document.getElementById('video2').play();
-			document.getElementById('video3').play();
-		}
 	</script>
 
 	<a-scene>
@@ -136,6 +19,7 @@
 				<video id="video" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" autoplay></video>
 				<video id="video2" loop="true" src="video/annVideo.mp4" ></video>
 				<video id="video3" loop="true" src="video/sintel.mp4" ></video>
+				<audio id="audio1" loop="true" src="video/hsh.mp3" ></audio>
 				<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
 				<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
 				<a-asset-item id="cat" src="3D Model/trotting_cat.glb"></a-asset-item>
@@ -281,7 +165,21 @@
 			<a-entity gltf-model="#j-dee" position="90 -663.7 -10" rotation="-1 10 -0.5" scale="2 2 2"></a-entity>
 
 			<a-entity gltf-model="#tree" position="-51 0 20" rotation="0 90 0" scale="1 1 1"></a-entity>
-			<a-entity gltf-model="#Old-Spirit-House" position="-50 0.6 20" rotation="0 90 0" scale="0.6 0.6 0.6"></a-entity>
+			<!-- <a-entity gltf-model="#Old-Spirit-House" position="-50 0.6 20" rotation="0 90 0" scale="0.6 0.6 0.6"></a-entity> -->
+
+			 <!-- MP3 audio asset -->
+			<!-- <a-assets timeout="10000">
+				<audio id="backgroundMusic" src="#audio1" crossorigin="anonymous"></audio>
+			</a-assets> -->
+
+			<!-- Entities -->
+			<a-entity gltf-model="#Old-Spirit-House" position="-50 0.6 20" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
+
+			<!-- Entity to play sound when colliding with the Old-Spirit-House -->
+			<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
+				<!-- Attach the collider component to detect collisions -->
+				<a-collider objects="#spiritHouse" on-hit="#audio1"></a-collider>
+			</a-entity>
 			
 
 		</a-scene>
