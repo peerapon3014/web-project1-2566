@@ -36,6 +36,47 @@
 				
 			// });
 
+			// AFRAME.registerComponent('modify-materials', {
+			// 	init: function () {
+			// 	// Wait for model to load.
+			// 	this.el.addEventListener('model-loaded', () => {
+			// 		// Grab the mesh / scene.
+			// 		const obj = this.el.getObject3D('mesh');
+			// 		// Go over the submeshes and modify materials we want.
+			// 		obj.traverse(node => {
+			// 		if (node.name.indexOf('ship') !== -1) {
+			// 			node.material.color.set('red');
+			// 		}
+			// 		});
+			// 	});
+			// 	}
+			// });
+		</script>
+
+		// 	init: function()
+		// 	{
+		// 		let video = document.querySelector("#video");
+		// 		let videoDisplay = document.querySelector("#video-display");
+		// 		let videoBorder  = document.querySelector("#video-border");
+		// 		let videoMesh  = videoDisplay.getObject3D("mesh");
+		// 		let borderMesh = videoBorder.getObject3D("mesh");
+		// 		videoBorder.addEventListener("mousedown", function(event)
+		// 		{
+		// 			if ( video.paused )
+		// 			{
+		// 				video.play();
+		// 				borderMesh.material.color.set("#004400");
+		// 			}
+		// 			else
+		// 			{
+		// 				video.pause();
+		// 				borderMesh.material.color.set("#440000");
+		// 			}
+		// 		});
+		// 	}
+
+		// });
+
 		// AFRAME.registerComponent('modify-materials', {
 		// 	init: function () {
 		// 	// Wait for model to load.
@@ -55,7 +96,7 @@
 		// อาร์เรย์ของ URL วิดีโอ
 		const videoUrls = [
 			"video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4",
-			"video/earth.mp4",
+			"video/annVideo.mp4",
 			"video/sintel.mp4"
 		];
 
@@ -87,7 +128,7 @@
 		}
 	</script>
 
-		<a-scene>
+	<a-scene>
 
 			<a-assets timeout="10000">
 				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
@@ -133,84 +174,38 @@
 
 
 			<!-- monitor -->
-			<a-box color="black" depth="1" height="10.5" width="17" position="0 9 -20">
-				<a-video
-					id="video-display"
-					width="16" height="9"
-					position="0 -0.39981 0.55"
-					src="#video">
-				</a-video>
-				<!-- name tag -->
-				<a-text 
-					value="Sound"
-					align="center"
-					color="white"
-					text="width: 21"
-					position="3 4.7 0.55">
-				</a-text>
-				<a-text 
-					value="Ban SaiThong"
-					align="center"
-					color="#ff00ff"
-					text="width: 21"
-					position="-1.5 4.7 0.55">
-				</a-text>
-				<!-- stand monitor -->	
-				<a-cylinder 
-					position="8 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<a-cylinder 
-					position="-8 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<a-cylinder 
-					position="0 -7.5 -0.005" 
-					radius="0.3" 
-					height="5"
-					color="#c0c0c0">
-				</a-cylinder>
-				<!-- Thai flag -->
-				<a-cylinder 
-					position="8 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="-8 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="-2.5 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="2.5 6 -0.005" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="0 0 -1.5" rotation="0 90 0"></a-entity>
-				</a-cylinder>
-			</a-box>
+			<a-entity gltf-model="#screen" position="-9.5 0 -19" rotation="0 1.5 0" scale="1.2 1.2 1.2">
+                <a-video
+                    id="video-display"
+                    width="16" height="9"
+                    position="8.2 7 0"
+                    src="#video"
+                    rotation="0 -2 0"
+                    sound="src: url(river.mp3); autoplay: false">
+                </a-video>
+                <a-text 
+                    value="Sound"
+                    align="center"
+                    color="white"
+                    text="width: 21"
+                    position="11 11 0.3"
+                    rotation="0 -2 0">
+                </a-text>
+                <a-text 
+                    value="Ban SaiThong"
+                    align="center"
+                    color="#ff00ff"
+                    text="width: 21"
+                    position="6 11 0"
+                    rotation="0 -3 0">
+                </a-text>
+            </a-entity>
 
 			<!-- speaker -->
-			<a-entity gltf-model="#speakerlow" position="-8 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerlow" position="22 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerhigh" position="5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+			<a-entity gltf-model="#speakerlow" position="-8.5 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+			<a-entity gltf-model="#speakerlow" position="23 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+			<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
-			<!-- <a-entity gltf-model="#screen" position="10 10 10" rotation="0 180 0" scale="1 1 1"> -->
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
