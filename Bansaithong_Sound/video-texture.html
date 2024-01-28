@@ -16,19 +16,20 @@
 			<a-assets timeout="10000">
 				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
 				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
-				<img id="pepsi" src="images/Pepsi_Thai-1.png" crossorigin="anonymous" />
+				<img id="pepsi" src="images/Pepsi_Thai-1.png" crossorigin="anonymous"/>
+				<img id="milo" src="images/milo.jpg" crossorigin="anonymous"/>
 				<video id="video2" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" ></video>
 				<video id="video" loop="true" src="video/annVideo.mp4" autoplay></video>
 				<video id="video3" loop="true" src="video/sintel.mp4" ></video>
 				<audio id="audio1" loop="true" src="video/hsh.mp3" ></audio>
 				<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
 				<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
+				<a-asset-item id="people3" src="3D Model/idle_2_male_free_animation_220_frames_loop.glb"></a-asset-item>
 				<a-asset-item id="cat" src="3D Model/trotting_cat.glb"></a-asset-item>
 				<a-asset-item id="speakerlow" src="3D Model/speaker_low_full.glb"></a-asset-item>
 				<a-asset-item id="speakerhigh" src="3D Model/speaker_high.glb"></a-asset-item>
 				<a-asset-item id="flag" src="3D Model/thailand.glb"></a-asset-item>
 				<a-asset-item id="screen" src="3D Model/screen16m.glb"></a-asset-item>
-				<a-asset-item id="milo" src="3D Model/milo.glb"></a-asset-item>
 				<a-asset-item id="j-dee" src="3D Model/Wat Chiang Man 4K.glb"></a-asset-item>
 				<a-asset-item id="Old-Spirit-House" src="3D Model/old_spirit_house.glb"></a-asset-item>
 				<a-asset-item id="tree" src="3D Model/mango_tree.glb"></a-asset-item>
@@ -99,6 +100,7 @@
 			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
 				<!-- Poster -->
 				<a-plane src="#pepsi" height="3" width="1.8" rotation="0 90 0" position="0.8 6.5 -2.7"></a-plane>
+				<a-plane src="#milo" height="3" width="1.8" rotation="0 90 0" position="0.8 6.5 -7.13"></a-plane>
 
 				<!-- Flag -->
 				<a-cylinder 
@@ -173,6 +175,7 @@
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="0 0 -10" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="2 0 -7" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-2 0 -7" rotation="0 90 0" ></a-entity>
+			<a-entity gltf-model="#people3" animation-mixer="loop: repeat" position="0 0 0" rotation="0 0 0" ></a-entity>
 
 			<!-- animal -->
 			<a-entity gltf-model="#cat" animation-mixer="loop: repeat" position="-6 0 -3" rotation="0 90 0" scale="0.4 0.4 0.4" 
