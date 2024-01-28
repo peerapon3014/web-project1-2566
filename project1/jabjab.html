@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breeds Information</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+
+    <!-- A-Frame Scene -->
+    <a-scene>
+        <!-- A-Frame Entity สำหรับแสดงข้อมูลของพันธุ์หมา -->
+        <a-entity id="dog-info" position="0 1 -3">
+            <a-text id="breed-name" color="white" position="-1 0.5 0" align="center" scale="2 2 2"></a-text>
+            <a-text id="breed-description" color="white" position="-1 0 0" align="left" wrap-count="30"></a-text>
+        </a-entity>
+
+        <!-- A-Frame Entity สำหรับแสดง 3D Model ของพันธุ์หมา -->
+        <a-entity id="dog-model" position="0 1 -5" scale="1.5 1.5 1.5">
+            <!-- เพิ่ม 3D Model ที่นี่ -->
+            <!-- <a-entity gltf-model="path/to/your/dog_model.gltf"></a-entity> -->
+        </a-entity>
+
+        <!-- A-Frame Entity สำหรับการคลิกเพื่อเปลี่ยนข้อมูลและโมเดล -->
+        <a-entity id="clickable-plane" geometry="primitive: plane; width: 5; height: 5" position="0 0 -4" material="opacity: 0"></a-entity>
+    </a-scene>
+
+    <!-- JavaScript สำหรับการจัดการข้อมูลและโมเดล -->
+    <script>
+        const dogBreeds = [
+            {
+                name: "Golden Retriever",
+                description: "The Golden Retriever is a friendly, intelligent, and devoted dog. They are known for their beautiful golden coats and friendly nature.",
+                modelPath: "path/to/golden_retriever_model.gltf"
+            },
+            // เพิ่มพันธุ์หมาเพิ่มเติมตามต้องการ
+        ];
+
+        let currentIndex = 0;
+        const breedName = document.getElementById('breed-name');
+        const breedDescription = document.getElementById('breed-description');
+        const dogModel = document.getElementById('dog-model');
+
+        function updateDogInfo() {
+            const currentBreed = dogBreeds[currentIndex];
+            breedName.setAttribute('value', currentBreed.name);
+            breedDescription.setAttribute('value', currentBreed.description);
+            dogModel.setAttribute('gltf-model', currentBreed.modelPath);
+        }
+
+        updateDogInfo(); // แสดงข้อมูลเริ่มต้น
+
+        // จัดการการคลิกเพื่อเปลี่ยนข้อมูลและโมเดล
+        const clickablePlane = document.getElementById('clickable-plane');
+        clickablePlane.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % dogBreeds.length;
+            updateDogInfo();
+        });
+    </script>
+
+</body>
+</html>
