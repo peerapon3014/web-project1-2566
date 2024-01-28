@@ -12,7 +12,6 @@
 		</script>
 
 	<a-scene>
-
 			<a-assets timeout="10000">
 				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
 				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
@@ -25,6 +24,10 @@
 				<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
 				<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
 				<a-asset-item id="people3" src="3D Model/idle_2_male_free_animation_220_frames_loop.glb"></a-asset-item>
+				<a-asset-item id="people4" src="3D Model/male_phone_walking_40_frames_loop.glb"></a-asset-item>
+				<a-asset-item id="people5" src="3D Model/idle_1_male_free_animation_200_frames_loop.glb"></a-asset-item>
+				<a-asset-item id="people6" src="3D Model/idle_talking_by_phone_free_animation_180f_loop.glb"></a-asset-item>
+				<a-asset-item id="people7" src="3D Model/female_phone-walking_free_animation_40f_loop.glb"></a-asset-item>
 				<a-asset-item id="cat" src="3D Model/trotting_cat.glb"></a-asset-item>
 				<a-asset-item id="speakerlow" src="3D Model/speaker_low_full.glb"></a-asset-item>
 				<a-asset-item id="speakerhigh" src="3D Model/speaker_high.glb"></a-asset-item>
@@ -172,11 +175,26 @@
 			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="12 0 -3" rotation="0 180 0" ></a-entity>
 			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-8 0 -7" rotation="0 180 0" ></a-entity>
 			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-10 0 -9" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="0 0 -10" rotation="0 90 0" ></a-entity>
+			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="0 0 -11" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="2 0 -7" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-2 0 -7" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people3" animation-mixer="" position="-1.28413 0 15.96044" rotation="0 135 0"></a-entity>
-			
+			<a-entity gltf-model="#people3" animation-mixer="loop: repeat" position="-1.28413 0 15.96044" rotation="0 135 0"></a-entity>
+			<a-entity gltf-model="#people4" animation-mixer="loop: repeat" position="10 0 2" rotation="0 0 0" animation="property: position; to: 10 0 15; dur: 10000; easing: linear; loop: true"></a-entity>
+			<a-entity gltf-model="#people4" animation-mixer="loop: repeat" position="-17.57892 0 -6.35338" rotation="0 0 0" animation="property: position; to: -17.57892 0 6.35338; dur: 10000; easing: linear; loop: true"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="16.36505 0 -8.84737" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="-15.09651 0 -8.847" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="12.9588 0 -6.8496" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="-12.9588 0 -6.8496" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="6.79336 0 -2.88921" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="-6.79336 0 -2.88921" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="-13.54597 0 -3.60995" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="10.49758 0 -0.84708" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="-10.49758 0 -0.84708" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="3.58781 0 -9.40444" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="-3.58781 0 -9.40444" rotation="0 180 0"></a-entity>
+			<a-entity gltf-model="#people7" animation-mixer="loop: repeat" position="-10 0 2" rotation="0 0 0" animation="property: position; to: -10 0 15; dur: 10000; easing: linear; loop: true"></a-entity>
+			<a-entity gltf-model="#people7" animation-mixer="loop: repeat" position="19.38132 0 -6.14286" rotation="0 0 0" animation="property: position; to: 19.38132 0 6.14286; dur: 10000; easing: linear; loop: true"></a-entity>
+
 			<!-- Monk -->
 			<a-box color="gray" depth="8" height="9" width="13" position="40 0 -10" rotation="0 -60 0">
 				<a-entity gltf-model="#monk" position="-3 30 1.5" scale="1 1 1" rotation="0 0 0"></a-entity>
