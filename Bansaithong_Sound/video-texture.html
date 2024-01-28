@@ -1,189 +1,172 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>VR - Sai thong</title>
-		<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-		<script src="js/aframe-environment-component.min.js"></script>
-		<script src="js/animation-mixer.js"></script>
-	</head>
 
-	<body>
-		<script>
-		</script>
+<head>
+	<title>VR - Sai thong</title>
+	<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/animation-mixer.js"></script>
+</head>
+
+<body>
+	<script>
+		AFRAME.registerComponent('play-pause', {
+			init: function () {
+				var myVideo = document.querySelector('#video01');
+				var videoControls = document.querySelector('#boxclick');
+				this.el.addEventListener('click', function () {
+					if (myVideo.paused) {
+						myVideo.play();
+					} else {
+						myVideo.pause();
+					}
+				});
+			}
+		});
+	</script>
 
 	<a-scene>
 
-			<a-assets timeout="10000">
-				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
-				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
-				<video id="video2" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" ></video>
-				<video id="video" loop="true" src="video/annVideo.mp4" autoplay></video>
-				<video id="video3" loop="true" src="video/sintel.mp4" ></video>
-				<audio id="audio1" loop="true" src="video/hsh.mp3" ></audio>
-				<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
-				<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
-				<a-asset-item id="cat" src="3D Model/trotting_cat.glb"></a-asset-item>
-				<a-asset-item id="speakerlow" src="3D Model/speaker_low_full.glb"></a-asset-item>
-				<a-asset-item id="speakerhigh" src="3D Model/speaker_high.glb"></a-asset-item>
-				<a-asset-item id="flag" src="3D Model/thailand.glb"></a-asset-item>
-				<a-asset-item id="screen" src="3D Model/screen16m.glb"></a-asset-item>
-				<a-asset-item id="milo" src="3D Model/milo.glb"></a-asset-item>
-				<a-asset-item id="j-dee" src="3D Model/Wat Chiang Man 4K.glb"></a-asset-item>
-				<a-asset-item id="Old-Spirit-House" src="3D Model/old_spirit_house.glb"></a-asset-item>
-				<a-asset-item id="tree" src="3D Model/mango_tree.glb"></a-asset-item>
-				<a-asset-item id="wat" src="3D Model/wat_benchamabophit 8K.glb"></a-asset-item>
-				<a-asset-item id="monk" src="3D Model/thai_buddha_statue.glb"></a-asset-item>
-			</a-assets>
+		<a-assets timeout="10000">
+			<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
+			<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
+			<video id="video2" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4"></video>
+			<video id="video" loop="true" src="video/annVideo.mp4" autoplay></video>
+			<video id="video3" loop="true" src="video/sintel.mp4"></video>
+			<audio id="audio1" loop="true" src="video/hsh.mp3"></audio>
+			<a-asset-item id="people1" src="3D Model/low_poly_people_free_sample_pack.glb"></a-asset-item>
+			<a-asset-item id="people2" src="3D Model/hype_dance_free_animation.glb"></a-asset-item>
+			<a-asset-item id="cat" src="3D Model/trotting_cat.glb"></a-asset-item>
+			<a-asset-item id="speakerlow" src="3D Model/speaker_low_full.glb"></a-asset-item>
+			<a-asset-item id="speakerhigh" src="3D Model/speaker_high.glb"></a-asset-item>
+			<a-asset-item id="flag" src="3D Model/thailand.glb"></a-asset-item>
+			<a-asset-item id="screen" src="3D Model/screen16m.glb"></a-asset-item>
+			<a-asset-item id="milo" src="3D Model/milo.glb"></a-asset-item>
+			<a-asset-item id="j-dee" src="3D Model/Wat Chiang Man 4K.glb"></a-asset-item>
+			<a-asset-item id="Old-Spirit-House" src="3D Model/old_spirit_house.glb"></a-asset-item>
+			<a-asset-item id="tree" src="3D Model/mango_tree.glb"></a-asset-item>
+			<a-asset-item id="wat" src="3D Model/wat_benchamabophit 8K.glb"></a-asset-item>
+			<a-asset-item id="monk" src="3D Model/thai_buddha_statue.glb"></a-asset-item>
+		</a-assets>
 
-			<!-- <a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
+		<!-- <a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
 				<a-entity id="leftHand" laser-controls="hand: left" raycaster
 					line="color: #FF00FF"></a-entity>
 				<a-entity id="rightHand" laser-controls="hand: right" raycaster
 					line="color: #FFFF00"></a-entity>
 			</a-entity> -->
 
-			<!-- sky -->
-			<a-sky 
-				rotation="0 100 35" 
-				color="#FFFFFF"s 
-				material="src: #sky" geometry="" scale="5 1 -1">
-			</a-sky>
+		<!-- sky -->
+		<a-sky rotation="0 100 35" color="#FFFFFF" s material="src: #sky" geometry="" scale="5 1 -1">
+		</a-sky>
 
-			 <!-- floor  -->
-			 <a-plane
-				width="150" height="200"
-				position=" 0.00 0.00 0.00"
-				rotation="-90 0 0"
-				color="#888888"
-				material="src: #grid; repeat:10 10; transparent: true;"
-				shader="flat">
-			</a-plane> 
+		<!-- floor  -->
+		<a-plane width="150" height="200" position=" 0.00 0.00 0.00" rotation="-90 0 0" color="#888888"
+			material="src: #grid; repeat:10 10; transparent: true;" shader="flat">
+		</a-plane>
 
 
-			<!-- monitor -->
-			<a-entity gltf-model="#screen" position="-9.5 0 -19" rotation="0 1.5 0" scale="1.2 1.2 1.2">
-                <a-video
-                    id="video-display"
-                    width="16" height="9"
-                    position="8.2 7 0"
-                    src="#video"
-                    rotation="0 -2 0"
-                    sound="src: url(river.mp3); autoplay: false">
-                </a-video>
-                <a-text 
-                    value="Ban SaiThong Sound"
-                    align="center"
-                    color="white"
-                    text="width: 21"
-                    position="4 11 0.5"
-                    rotation="0 -3 0"
-					animation="property: position; to: 12 11 0.5; dur: 10000; easing: linear; loop: true">
-                </a-text>
-            </a-entity>
+		<!-- monitor -->
+		<a-entity gltf-model="#screen" position="-9.5 0 -19" rotation="0 1.5 0" scale="1.2 1.2 1.2">
+			<a-video id="video-display" width="16" height="9" position="8.2 7 0" src="#video" rotation="0 -2 0"
+				sound="src: url(river.mp3); autoplay: false">
+			</a-video>
+			<a-text value="Ban SaiThong Sound" align="center" color="white" text="width: 21" position="4 11 0.5"
+				rotation="0 -3 0" animation="property: position; to: 12 11 0.5; dur: 10000; easing: linear; loop: true">
+			</a-text>
+		</a-entity>
 
-			<!-- speaker -->
-			<a-entity gltf-model="#speakerlow" position="-8.5 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerlow" position="23 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
-			<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+		<!-- speaker -->
+		<a-entity gltf-model="#speakerlow" position="-8.5 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+		<a-entity gltf-model="#speakerlow" position="23 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
+		<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
-				<a-cylinder 
-					position="0 8.8 -5" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="0 8.8 -3.5" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="0 8.8 -6.7" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-			</a-entity>
-			<a-entity gltf-model="#speakerhigh" position="-25.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
-				<a-cylinder 
-					position="0 8.8 -5" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="0 8.8 -3.4" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-				<a-cylinder 
-					position="0 8.8 -6.6" 
-					radius="0.05" 
-					height="2"
-					color="#c0c0c0"
-					scale="0.5 0.5 0.5">
-					<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0" scale="1 1 1"></a-entity>
-				</a-cylinder>
-			</a-entity>
+			<a-cylinder position="0 8.8 -5" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+			<a-cylinder position="0 8.8 -3.5" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+			<a-cylinder position="0 8.8 -6.7" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+		</a-entity>
+		<a-entity gltf-model="#speakerhigh" position="-25.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+			<a-cylinder position="0 8.8 -5" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+			<a-cylinder position="0 8.8 -3.4" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+			<a-cylinder position="0 8.8 -6.6" radius="0.05" height="2" color="#c0c0c0" scale="0.5 0.5 0.5">
+				<a-entity gltf-model="#flag" animation-mixer="loop: repeat" position="-1.5 0 0" rotation="0 180 0"
+					scale="1 1 1"></a-entity>
+			</a-cylinder>
+		</a-entity>
 
-			<!-- people -->
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="0 0 -3" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="15 0 -12" rotation="0 0 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-15 0 -12" rotation="0 0 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-11 0 -12" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="11 0 -12" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="6 0 -5" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-6 0 -5" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="0 0 -10" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="2 0 -7" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-2 0 -7" rotation="0 90 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="12 0 -2" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="14 0 -6" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-12 0 -2" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-14 0 -6" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-6 0 0" rotation="0 180 0" ></a-entity>
-			<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="6 0 0" rotation="0 180 0" ></a-entity>
-			
-			<!-- Monk -->
-			<a-box color="white" depth="8" height="9" width="13" position="40 0 -10" rotation="0 -60 0">
-				<a-entity gltf-model="#monk" position="-3 30 1.5" scale="1 1 1" rotation="0 0 0"></a-entity>
-			</a-box>
+		<!-- people -->
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="0 0 -3" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="15 0 -12" rotation="0 0 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-15 0 -12" rotation="0 0 0"></a-entity>
+		<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-11 0 -12"
+			rotation="0 90 0"></a-entity>
+		<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="11 0 -12" rotation="0 90 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="6 0 -5" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-6 0 -5" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="0 0 -10" rotation="0 90 0"></a-entity>
+		<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="2 0 -7" rotation="0 90 0"></a-entity>
+		<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-2 0 -7" rotation="0 90 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="12 0 -2" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="14 0 -6" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-12 0 -2"
+			rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-14 0 -6"
+			rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="-6 0 0" rotation="0 180 0"></a-entity>
+		<a-entity gltf-model="#people1" animation-mixer="loop: repeat" position="6 0 0" rotation="0 180 0"></a-entity>
 
-			<!-- temple -->
-			<a-entity gltf-model="#wat" position="-11 2 -90" scale="1.5 1.5 1.5" rotation="-0.2 0 0"></a-entity>
-			<a-entity gltf-model="#j-dee" position="67.5 -497.7 15" rotation="-1 10 -0.5" scale="1.5 1.5 1.5"></a-entity>
+		<!-- Monk -->
+		<a-box color="white" depth="8" height="9" width="13" position="40 0 -10" rotation="0 -60 0">
+			<a-entity gltf-model="#monk" position="-3 30 1.5" scale="1 1 1" rotation="0 0 0"></a-entity>
+		</a-box>
 
-			 <!-- MP3 audio asset -->
-			<!-- <a-assets timeout="10000">
+		<!-- box -->
+		<a-box id="boxclick" visible="true" position="-9.5 0 -19" width="1" height="1"
+			event-setclick="_event: click; _target: #video001; visible: true"
+			event-setenter="_event: mouseenter; material.color: #FF0000"
+			event-set__leave="_event: mouseleave; material.color: #FFFFFF" play-pause>
+		</a-box>
+
+		<!-- temple -->
+		<a-entity gltf-model="#wat" position="-11 2 -90" scale="1.5 1.5 1.5" rotation="-0.2 0 0"></a-entity>
+		<a-entity gltf-model="#j-dee" position="67.5 -497.7 15" rotation="-1 10 -0.5" scale="1.5 1.5 1.5"></a-entity>
+
+		<!-- MP3 audio asset -->
+		<!-- <a-assets timeout="10000">
 				<audio id="backgroundMusic" src="#audio1" crossorigin="anonymous"></audio>
 			</a-assets> -->
 
-			<!-- Entities -->
-			<a-entity gltf-model="#tree" position="-41 0 15" rotation="0 90 0" scale="1 1 1"></a-entity>
-			<a-entity gltf-model="#Old-Spirit-House" position="-40 0.6 15" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
-			<a-entity gltf-model="#cat" animation-mixer="loop: repeat" position="-39 0 20" rotation="0 -180 0" scale="0.4 0.4 0.4" 
-					  animation="property: position; to: -39 0 10; dur: 10000; easing: linear; loop: true">
-			</a-entity>
+		<!-- Entities -->
+		<a-entity gltf-model="#tree" position="-41 0 15" rotation="0 90 0" scale="1 1 1"></a-entity>
+		<a-entity gltf-model="#Old-Spirit-House" position="-40 0.6 15" rotation="0 90 0" scale="0.6 0.6 0.6"
+			id="spiritHouse"></a-entity>
+		<a-entity gltf-model="#cat" animation-mixer="loop: repeat" position="-39 0 20" rotation="0 -180 0"
+			scale="0.4 0.4 0.4" animation="property: position; to: -39 0 10; dur: 10000; easing: linear; loop: true">
+		</a-entity>
 
-			<!-- Entity to play sound when colliding with the Old-Spirit-House -->
-			<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
-				<!-- Attach the collider component to detect collisions -->
-				<a-collider objects="#spiritHouse" on-hit="#audio1"></a-collider>
-			</a-entity>
-			
+		<!-- Entity to play sound when colliding with the Old-Spirit-House -->
+		<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
+			<!-- Attach the collider component to detect collisions -->
+			<a-collider objects="#spiritHouse" on-hit="#audio1"></a-collider>
+		</a-entity>
 
-		</a-scene>
-	</body>
+
+	</a-scene>
+</body>
+
 </html>
