@@ -16,7 +16,13 @@
 				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
 				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
 				<img id="pepsi" src="images/Pepsi_Thai-1.png" crossorigin="anonymous"/>
-				<img id="milo" src="images/milo.jpg" crossorigin="anonymous"/>
+				<img id="milo" src="images/milo.png" crossorigin="anonymous"/>
+				<img id="vitamin" src="images/vitamin.png" crossorigin="anonymous"/>
+				<img id="breats" src="images/breats.png" crossorigin="anonymous"/>
+				<img id="bireleys" src="images/bireleys.png" crossorigin="anonymous"/>
+				<img id="RC" src="images/RC.png" crossorigin="anonymous"/>
+				<img id="che" src="images/che.png" crossorigin="anonymous"/>
+				<img id="owantin" src="images/owantin.png" crossorigin="anonymous"/>
 				<video id="video2" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" ></video>
 				<video id="video" loop="true" src="video/annVideo.mp4" ></video>
 				<video id="video3" loop="true" src="video/sintel.mp4" ></video>
@@ -105,8 +111,10 @@
 			<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
 				<!-- Poster -->
-				<a-plane src="#pepsi" height="3" width="1.8" rotation="0 90 0" position="0.8 6.5 -2.7"></a-plane>
-				<a-plane src="#milo" height="3" width="1.8" rotation="0 90 0" position="0.8 6.5 -7.13"></a-plane>
+				<a-plane src="#pepsi" height="1.5" width="1.8" rotation="0 90 0" position="0.8 7.3 -2.7"></a-plane>
+				<a-plane src="#vitamin" height="1.5" width="1.8" rotation="0 90 0" position="0.8 5 -2.7"></a-plane>
+				<a-plane src="#milo" height="1.5" width="1.8" rotation="0 90 0" position="0.8 7.3 -7.13"></a-plane>
+				<a-plane src="#breats" height="1.5" width="1.8" rotation="0 90 0" position="0.8 5 -7.13"></a-plane>
 
 				<!-- Flag -->
 				<a-cylinder 
@@ -135,6 +143,13 @@
 				</a-cylinder>
 			</a-entity>
 			<a-entity gltf-model="#speakerhigh" position="-25.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
+				<!-- Poster -->
+				<a-plane src="#bireleys" height="1.5" width="1.8" rotation="0 90 0" position="0.8 7.3 -2.75"></a-plane>
+				<a-plane src="#owantin" height="1.5" width="1.8" rotation="0 90 0" position="0.8 5 -2.75"></a-plane>
+				<a-plane src="#RC" height="1.5" width="1.8" rotation="0 90 0" position="0.8 7.3 -7.15"></a-plane>
+				<a-plane src="#che" height="1.5" width="1.8" rotation="0 90 0" position="0.8 5 -7.15"></a-plane>
+
+				<!-- Flag -->
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
@@ -182,8 +197,6 @@
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="2 0 -7" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people2" animation-mixer="loop: repeat" position="-2 0 -7" rotation="0 90 0" ></a-entity>
 			<a-entity gltf-model="#people3" animation-mixer="loop: repeat" position="-1.28413 0 15.96044" rotation="0 135 0"></a-entity>
-			<a-entity gltf-model="#people4" animation-mixer="loop: repeat" position="10 0 2" rotation="0 0 0" animation="property: position; to: 10 0 15; dur: 10000; easing: linear; loop: true"></a-entity>
-			<a-entity gltf-model="#people4" animation-mixer="loop: repeat" position="-17.57892 0 -6.35338" rotation="0 0 0" animation="property: position; to: -17.57892 0 6.35338; dur: 10000; easing: linear; loop: true"></a-entity>
 			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="16.36505 0 -8.84737" rotation="0 180 0"></a-entity>
 			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="-15.09651 0 -8.847" rotation="0 180 0"></a-entity>
 			<a-entity gltf-model="#people5" animation-mixer="loop: repeat" position="12.9588 0 -6.8496" rotation="0 180 0"></a-entity>
@@ -195,8 +208,6 @@
 			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="-10.49758 0 -0.84708" rotation="0 180 0"></a-entity>
 			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="3.58781 0 -9.40444" rotation="0 180 0"></a-entity>
 			<a-entity gltf-model="#people6" animation-mixer="loop: repeat" position="-3.58781 0 -9.40444" rotation="0 180 0"></a-entity>
-			<a-entity gltf-model="#people7" animation-mixer="loop: repeat" position="-10 0 2" rotation="0 0 0" animation="property: position; to: -10 0 15; dur: 10000; easing: linear; loop: true"></a-entity>
-			<a-entity gltf-model="#people7" animation-mixer="loop: repeat" position="19.38132 0 -6.14286" rotation="0 0 0" animation="property: position; to: 19.38132 0 6.14286; dur: 10000; easing: linear; loop: true"></a-entity>
 
 			<!-- Monk -->
 			<a-box color="gray" depth="8" height="9" width="13" position="40 0 -10" rotation="0 -60 0">
@@ -211,7 +222,7 @@
 			<a-entity gltf-model="#car" position="5.22819 0.04669 21" rotation="0 90 0" scale="1.2 1.2 1.2"></a-entity>
 
 			<!-- projecter -->
-			<a-entity gltf-model="#projector" position="0.45983 0 18" rotation="0 -179 0" scale="1.2 1.2 1.2"></a-entity>
+			<a-entity gltf-model="#projector" position="-0.76086 0 13.68177" rotation="0 4.32 0" scale="1.2 1.2 1.2"></a-entity>
 
 			<!-- old metal -->
 			<a-entity gltf-model="#oldmetal" position="25.8153 0 -20.3901" rotation="0 -179 0" scale="0.01 0.01 0.01"></a-entity>
@@ -240,6 +251,12 @@
 			<a-entity gltf-model="#tree" position="-41 0 15" rotation="0 90 0" scale="1 1 1"></a-entity>
 			<a-entity gltf-model="#Old-Spirit-House" position="-40 0.6 15" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
 
+			<!-- Tree -->
+			<a-entity gltf-model="#tree" position="20.12576 0 16.26483" rotation="0 90 0" scale=""></a-entity>
+			<a-entity gltf-model="#tree" position="-20.63104 0 16.26483" rotation="0 90 0" scale=""></a-entity>
+			<a-entity gltf-model="#tree" position="31.37945 0 1.50453" rotation="0 90 0" scale=""></a-entity>
+			<a-entity gltf-model="#tree" position="22.72724 0 -12.41049" rotation="0 90 0" scale=""></a-entity>
+			<a-entity gltf-model="#tree" position="-22.35851 0 -12.3458" rotation="0 90 0" scale=""></a-entity>
 
 			<!-- Entity to play sound when colliding with the Old-Spirit-House -->
 			<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
