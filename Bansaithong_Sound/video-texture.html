@@ -16,6 +16,7 @@
 			<a-assets timeout="10000">
 				<img id="grid" src="images/ground1.jpg" crossorigin="anonymous" />
 				<img id="sky" src="images/sky2.jpg" crossorigin="anonymous" />
+				<img id="pepsi" src="images/Pepsi_Thai-1.png" crossorigin="anonymous" />
 				<video id="video2" loop="true" src="video/กันตรึมสกา - ยิ่งยง ยอดบัวงาม.mp4" ></video>
 				<video id="video" loop="true" src="video/annVideo.mp4" autoplay></video>
 				<video id="video3" loop="true" src="video/sintel.mp4" ></video>
@@ -90,11 +91,16 @@
                 </a-text>
             </a-entity>
 
+			
 			<!-- speaker -->
 			<a-entity gltf-model="#speakerlow" position="-8.5 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
 			<a-entity gltf-model="#speakerlow" position="23 0 -21" rotation="0 180 0" scale="1.8 1.8 1.8"></a-entity>
 			<a-entity gltf-model="#speakerhigh" position="6.5 -3 -19.5" rotation="0 -90 0" scale="2 2 2">
 			<!-- <a-entity gltf-model="#milo" position="0 0 0" rotation="0 0 0" scale="0.1 0.1 0.1"> -->
+				<!-- Poster -->
+				<a-plane src="#pepsi" height="3" width="1.8" rotation="0 90 0" position="0.8 6.5 -2.7"></a-plane>
+
+				<!-- Flag -->
 				<a-cylinder 
 					position="0 8.8 -5" 
 					radius="0.05" 
