@@ -172,6 +172,9 @@
 			<!-- Entities -->
 			<a-entity gltf-model="#tree" position="-41 0 15" rotation="0 90 0" scale="1 1 1"></a-entity>
 			<a-entity gltf-model="#Old-Spirit-House" position="-40 0.6 15" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
+			<a-entity gltf-model="#cat" animation-mixer="loop: repeat" position="-39 0 20" rotation="0 -180 0" scale="0.4 0.4 0.4" 
+					  animation="property: position; to: -39 0 10; dur: 10000; easing: linear; loop: true">
+			</a-entity>
 
 			<!-- Entity to play sound when colliding with the Old-Spirit-House -->
 			<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
