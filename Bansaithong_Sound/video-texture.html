@@ -31,7 +31,8 @@
 				<a-asset-item id="j-dee" src="3D Model/Wat Chiang Man 4K.glb"></a-asset-item>
 				<a-asset-item id="Old-Spirit-House" src="3D Model/old_spirit_house.glb"></a-asset-item>
 				<a-asset-item id="tree" src="3D Model/mango_tree.glb"></a-asset-item>
-				<!-- <a-asset-item id="wat" src="3D Model/wat_benchamabophit 8K.glb"></a-asset-item> -->
+				<a-asset-item id="wat" src="3D Model/thai_lanna_buddhist_temple.glb"></a-asset-item>
+				<a-asset-item id="monk" src="3D Model/thai_buddha_statue.glb"></a-asset-item>
 			</a-assets>
 
 			<a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
@@ -50,7 +51,7 @@
 
 			 <!-- floor  -->
 			 <a-plane
-				width="200" height="200"
+				width="150" height="100"
 				position=" 0.00 0.00 0.00"
 				rotation="-90 0 0"
 				color="#888888"
@@ -161,12 +162,14 @@
 					  animation="property: position; to: 6 0 -3; dur: 10000; easing: linear; loop: true">
 			</a-entity>
 			
-			<!-- temple -->
-			<!-- <a-entity gltf-model="#wat" position="-11 2.2 -80" scale="1.5 1.5 1.5" rotation="0 0 -0.7"></a-entity> -->
-			<a-entity gltf-model="#j-dee" position="90 -663.7 20" rotation="-1 10 -0.5" scale="2 2 2"></a-entity>
+			<!-- Monk -->
+			<a-box color="white" depth="8" height="9" width="13" position="0 0 -40">
+				<a-entity gltf-model="#monk" position="-3 30 1.5" scale="1 1 1" rotation="0 0 0"></a-entity>
+			</a-box>
 
-			<a-entity gltf-model="#tree" position="-51 0 20" rotation="0 90 0" scale="1 1 1"></a-entity>
-			<!-- <a-entity gltf-model="#Old-Spirit-House" position="-50 0.6 20" rotation="0 90 0" scale="0.6 0.6 0.6"></a-entity> -->
+			<!-- temple -->
+			<!-- <a-entity gltf-model="#wat" position="-11 2.2 -80" scale="0.5 0.5 0.5" rotation="0 0 0"></a-entity> -->
+			<a-entity gltf-model="#j-dee" position="67.5 -497.7 15" rotation="-1 10 -0.5" scale="1.5 1.5 1.5"></a-entity>
 
 			 <!-- MP3 audio asset -->
 			<!-- <a-assets timeout="10000">
@@ -174,7 +177,8 @@
 			</a-assets> -->
 
 			<!-- Entities -->
-			<a-entity gltf-model="#Old-Spirit-House" position="-50 0.6 20" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
+			<a-entity gltf-model="#tree" position="-41 0 15" rotation="0 90 0" scale="1 1 1"></a-entity>
+			<a-entity gltf-model="#Old-Spirit-House" position="-40 0.6 15" rotation="0 90 0" scale="0.6 0.6 0.6" id="spiritHouse"></a-entity>
 
 			<!-- Entity to play sound when colliding with the Old-Spirit-House -->
 			<a-entity id="player" camera position="0 1.6 0" look-controls wasd-controls>
