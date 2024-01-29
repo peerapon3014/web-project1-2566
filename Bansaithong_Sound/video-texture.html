@@ -75,13 +75,6 @@
 			<a-asset-item id="oldmetal10" src="3D Model/old_metal_10.glb"></a-asset-item>
 		</a-assets>
 
-		<!-- <a-entity movement-controls="speed: 0.1; fly: false;" position="0 0 0">
-				<a-entity id="leftHand" laser-controls="hand: left" raycaster
-					line="color: #FF00FF"></a-entity>
-				<a-entity id="rightHand" laser-controls="hand: right" raycaster
-					line="color: #FFFF00"></a-entity>
-			</a-entity> -->
-
 		<!-- sky -->
 		<a-sky rotation="0 100 35" color="#FFFFFF" s material="src: #sky" geometry="" scale="5 1 -1">
 		</a-sky>
@@ -96,10 +89,8 @@
 		<a-entity gltf-model="#screen" position="-9.5 0 -19" rotation="0 1.5 0" scale="1.2 1.2 1.2">
 			<a-video id="video-display" width="16" height="9" position="8.2 7 0" src="#video"
 				rotation="0 -2 0"></a-video>
-			<a-text value="Sound" align="center" color="white" text="width: 21" position="11 11 0.3" rotation="0 -2 0">
-			</a-text>
-			<a-text value="Ban SaiThong" align="center" color="#ff00ff" text="width: 21" position="6 11 0"
-				rotation="0 -3 0">
+			<a-text value="Ban SaiThong Sound" align="center" color="white" text="width: 21" position="4 11 0.5"
+				    rotation="0 -3 0" animation="property: position; to: 12 11 0.5; dur: 10000; easing: linear; loop: true">
 			</a-text>
 		</a-entity>
 
